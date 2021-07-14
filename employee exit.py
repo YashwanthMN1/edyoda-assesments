@@ -56,20 +56,6 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 2)
 
 
-# In[9]:
-
-
-from sklearn.neighbors import KNeighborsRegressor
-NN_model = KNeighborsRegressor(n_neighbors = 3)
-NN_model.fit(X_train, y_train)
-y_predict = NN_model.predict(X_test)
-
-print(NN_model.score(X_train, y_train))
-print(NN_model.score(X_test, y_test))
-
-
-# In[10]:
-
 
 from sklearn.linear_model import LogisticRegression
 lr_model = LogisticRegression()
@@ -79,8 +65,6 @@ lr_y_predict = lr_model.predict(X_test)
 print(lr_model.score(X_train, y_train))
 print(lr_model.score(X_test, y_test))
 
-
-# In[11]:
 
 
 from sklearn.neighbors import KNeighborsClassifier
@@ -105,16 +89,6 @@ from sklearn.model_selection import KFold,cross_val_score
 kfold = KFold(n_splits = 4,random_state = 1)
 result = cross_val_score(knn_class,X_train,y_train,cv=kfold,scoring ='accuracy')
 print(result)
-
-
-# In[ ]:
-
-
-#HENCE KNN CLASSIFIER IS BEST MODEL FOR THIS DATA
-#and accuracy also not so diffrent for k partitions 
-
-
-# In[ ]:
 
 
 
